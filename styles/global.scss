@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 0;
+}
+
+:root {
+  --white: #fff;
+  --black: #000;
+
+  --bg-primary: #202024;
+  --bg-secondary: #29292e;
+  --bg-dark: #121214;
+
+  --red: #aa2834;
+  --green: #00875f;
+  --gray: #7c7c8a;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--white);
+  font-family: Helvetica, Arial;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (max-width: 720px) {
+  html {
+    font-size: 87.5%;
+  }
+}
+
+@media (max-width: 1080px) {
+  html {
+    font-size: 93.75%;
+  }
+}
