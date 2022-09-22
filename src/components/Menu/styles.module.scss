@@ -9,14 +9,14 @@ header {
     font-size: 1.7rem;
     font-weight: bold;
   }
+  nav {
+    display: flex;
+    gap: 1rem;
+  }
 
   nav a {
     transition: all 0.4s;
     font-size: 1.1rem;
-  }
-
-  nav a:first-child {
-    margin-right: 1rem;
   }
 
   nav a:hover {

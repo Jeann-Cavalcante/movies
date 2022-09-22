@@ -9,7 +9,8 @@ const Menu = () => {
       </Link>
 
       <nav>
-        <Link to="/">Home</Link>
+        <Link to="/">Filmes</Link>
+        <Link to="/">Series</Link>
         <Link to="/favoritos">Favoritos</Link>
       </nav>
     </header>
