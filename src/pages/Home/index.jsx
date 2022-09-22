@@ -1,3 +1,4 @@
+import Carousel from "../../components/Carousel";
 import { useApiMovie } from "../../hooks/useApiMovie";
 
 const Home = () => {
@@ -7,7 +8,7 @@ const Home = () => {
   // console.log(data);
   return (
     <div>
-      <h1>Home aqui</h1>
+      <Carousel title="Populares" category="movie" list="popular" />
     </div>
   );
 };

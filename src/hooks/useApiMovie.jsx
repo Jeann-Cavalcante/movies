@@ -19,7 +19,7 @@ export const useApiMovie = (url) => {
       setData(api.data.results);
 
       setLoading(true);
-      console.log(api.data.results);
+      // console.log(api.data.results);
     };
 
     GetMovie();

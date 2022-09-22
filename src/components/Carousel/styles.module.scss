@@ -1,0 +1,55 @@
+.Container {
+  position: relative;
+  height: 500px;
+  margin-top: 3rem;
+  color: var(--gray);
+
+  h2 {
+    margin: 0 0 1rem 1rem;
+    font-weight: bold;
+    color: var(--white);
+  }
+  .ArrowLeft {
+    position: absolute;
+    top: 54px;
+    cursor: pointer;
+    opacity: 0.5;
+    padding: 6.3rem 0.2rem;
+    background-color: rgba(0, 0, 0, 0.27);
+    color: var(--white);
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+  }
+
+  .ArrowRight {
+    position: absolute;
+    top: 54px;
+    right: 0;
+    opacity: 0.5;
+    cursor: pointer;
+    padding: 6.3rem 0.2rem;
+    background-color: rgba(0, 0, 0, 0.27);
+    color: var(--white);
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+  }
+
+  .Carousel {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+  }
+
+  img {
+    width: 200px;
+  }
+}
+
+.Carousel::-webkit-scrollbar {
+  display: none;
+}
