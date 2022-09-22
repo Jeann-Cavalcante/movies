@@ -1,0 +1,20 @@
+.Container {
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 4rem);
+
+  h3 {
+    font-size: 1.5em;
+  }
+
+  h1 {
+    margin-bottom: 1rem;
+  }
+
+  a:hover {
+    color: var(--green);
+  }
+}
