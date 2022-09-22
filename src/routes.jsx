@@ -1,4 +1,4 @@
-// import Menu from "./components/Menu";
+import Menu from "./components/Menu";
 
 import Home from "./pages/Home";
 import Info from "./pages/Info";
@@ -8,6 +8,7 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 function RoutesApp() {
   return (
     <Router>
+      <Menu />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/movie/:id" element={<Info />} />
