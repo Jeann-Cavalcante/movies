@@ -10,7 +10,7 @@ const Menu = () => {
 
       <nav>
         <Link to="/">Filmes</Link>
-        <Link to="/">Series</Link>
+        <Link to="/serie">Series</Link>
         <Link to="/favoritos">Favoritos</Link>
       </nav>
     </header>
