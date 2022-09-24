@@ -5,6 +5,10 @@
   object-fit: cover;
   -webkit-mask-image: linear-gradient(to top, transparent 10%, black 100%);
 
+  @media (max-width: 1080px) {
+    height: auto;
+  }
+
   img {
     width: 100%;
   }
@@ -15,14 +19,30 @@
   display: flex;
   justify-content: center;
 
+  @media (max-width: 1080px) {
+    flex-direction: column;
+    margin-top: -100px;
+  }
+
   img {
     width: 300px;
     margin-left: 5rem;
+    border-radius: 5px;
+
+    @media (max-width: 1080px) {
+      width: 200px;
+      margin: 0 auto;
+      margin-bottom: 2rem;
+    }
   }
 
   .Title {
     width: 90%;
     margin-left: 3rem;
+
+    @media (max-width: 1080px) {
+      margin: 0 auto;
+    }
   }
 
   h1 {
@@ -37,5 +57,10 @@
   .Circle {
     width: 50px;
     margin-top: 1rem;
+
+    @media (max-width: 1080px) {
+      width: 80%;
+      margin: 3rem auto;
+    }
   }
 }
