@@ -1,0 +1,51 @@
+.Container {
+  padding-top: 6rem;
+  height: calc(100vh - 2rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  h1 {
+    margin-bottom: 1rem;
+  }
+
+  .Lista {
+    background-color: var(--bg-secondary);
+    display: flex;
+    height: 225px;
+    box-shadow: 0 0 20px var(--black);
+
+    .Img {
+      width: 150px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .Text {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding: 1rem;
+      height: 225px;
+
+      button {
+        align-self: center;
+        border: none;
+        outline: none;
+        padding: 0.5rem 3rem;
+        background-color: var(--red);
+        color: var(--white);
+        border-radius: 5px;
+        transition: all 0.3s;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
