@@ -1,9 +1,15 @@
 header {
+  position: fixed;
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 4rem;
   background-color: var(--bg-secondary);
+  flex: 1;
+  width: 100%;
+  top: 0;
+  z-index: 99;
+  box-shadow: 0 0 20px #000;
 
   span {
     font-size: 1.7rem;
