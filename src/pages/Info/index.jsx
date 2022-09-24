@@ -11,9 +11,6 @@ const Info = () => {
   const url = `https://api.themoviedb.org/3/movie/${id}`;
   const { info } = useApiMovie(url);
 
-  const percentage = 8;
-  const value = 8;
-
   //If de testes
   if (info) {
     return (
