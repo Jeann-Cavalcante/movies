@@ -5,10 +5,12 @@ import { useApiMovie } from "../../hooks/useApiMovie";
 import styles from "./styles.module.scss";
 
 import "react-circular-progressbar/dist/styles.css";
+import { useCategoryContext } from "../../hooks/useCategoryContext";
 
 const Info = () => {
   const { id } = useParams();
-  const url = `https://api.themoviedb.org/3/movie/${id}`;
+  const { categoria } = useCategoryContext();
+  const url = `https://api.themoviedb.org/3/${categoria}/${id}`;
   const { info } = useApiMovie(url);
 
   //If de testes

@@ -3,16 +3,24 @@ import { useApiMovie } from "../../hooks/useApiMovie";
 import styles from "./styles.module.scss";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { useCategoryContext } from "../../hooks/useCategoryContext";
 
-const Carousel = ({ category, list, title }) => {
+const Carousel = ({ list, title }) => {
   const [arrowLeft, setArrowLeft] = useState(false);
-  // const [position, setPosition] = useState(0);
-  const url = `https://api.themoviedb.org/3/${category}/${list}`;
+
+  const { categoria } = useCategoryContext();
+
+  const url = `https://api.themoviedb.org/3/${categoria}/${list}`;
   const { data, loading } = useApiMovie(url);
 
   const carousel = useRef(null);
 
   useEffect(() => {
+    // function GetCategory() {
+    //   setCategoria(category);
+    // }
+    // GetCategory();
+    // console.log(categoria);
     // const positionScroll = carousel.current.children[0].getBoundingClientRect();
     // console.log(positionScroll);
   }, []);
@@ -54,7 +62,7 @@ const Carousel = ({ category, list, title }) => {
       </div>
       <div className={styles.Carousel} ref={carousel}>
         {data?.map((item) => (
-          <Link to={`/${category}/${item.id}`}>
+          <Link to={`/${categoria}/${item.id}`}>
             <img
               key={item.id}
               src={`https://image.tmdb.org/t/p/original/${item.poster_path}`}
