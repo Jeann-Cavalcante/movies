@@ -1,0 +1,40 @@
+.Background {
+  width: 100%;
+  height: 900px;
+  object-fit: cover;
+  -webkit-mask-image: linear-gradient(to top, transparent 10%, black 100%);
+
+  img {
+    width: 100%;
+  }
+}
+
+.Content {
+  margin-top: -300px;
+  display: flex;
+  justify-content: center;
+
+  img {
+    width: 300px;
+    margin-left: 5rem;
+  }
+
+  .Title {
+    width: 90%;
+    margin-left: 3rem;
+  }
+
+  h1 {
+    margin-bottom: 1rem;
+  }
+
+  p {
+    line-height: 1.5em;
+    font-size: 1.3rem;
+  }
+
+  .Circle {
+    width: 50px;
+    margin-top: 1rem;
+  }
+}

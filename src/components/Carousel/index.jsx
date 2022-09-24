@@ -2,6 +2,7 @@ import { ArrowLeft, ArrowRight } from "phosphor-react";
 import { useApiMovie } from "../../hooks/useApiMovie";
 import styles from "./styles.module.scss";
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Carousel = ({ category, list, title }) => {
   const [arrowLeft, setArrowLeft] = useState(false);
@@ -53,11 +54,13 @@ const Carousel = ({ category, list, title }) => {
       </div>
       <div className={styles.Carousel} ref={carousel}>
         {data?.map((item) => (
-          <img
-            key={item.id}
-            src={`https://image.tmdb.org/t/p/original/${item.poster_path}`}
-            alt={item.title}
-          />
+          <Link to={`/${category}/${item.id}`}>
+            <img
+              key={item.id}
+              src={`https://image.tmdb.org/t/p/original/${item.poster_path}`}
+              alt={item.title}
+            />
+          </Link>
         ))}
       </div>
     </div>
