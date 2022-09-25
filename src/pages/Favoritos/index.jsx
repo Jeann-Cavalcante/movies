@@ -21,6 +21,12 @@ const Favoritos = () => {
     <div className={styles.Container}>
       <h1>Meus favoritos</h1>
 
+      {favoritos.length === 0 && (
+        <p>
+          Adicione filmes ou series como favoritos para que possam aparecer aqui
+        </p>
+      )}
+
       {favoritos.map((item) => (
         <div key={item.id} className={styles.Lista}>
           <div className={styles.Img}>
