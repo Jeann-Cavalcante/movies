@@ -38,7 +38,7 @@ export const useApiMovie = (url) => {
         },
       });
       setInfo(api.data);
-      console.log(api.data);
+      // console.log(api.data);
     };
     GetInfo();
   }, []);

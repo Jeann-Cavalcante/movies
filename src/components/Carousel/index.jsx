@@ -33,7 +33,7 @@ const Carousel = ({ list, title }) => {
       setArrowLeft(false);
     }
     carousel.current.scrollLeft -= carousel.current.offsetWidth;
-    console.log(positionScroll.left);
+    // console.log(positionScroll.left);
   }
 
   function handleRightClick() {
@@ -45,7 +45,7 @@ const Carousel = ({ list, title }) => {
       setArrowLeft(false);
     }
     carousel.current.scrollLeft += carousel.current.offsetWidth;
-    console.log(positionScroll.left);
+    // console.log(positionScroll.left);
   }
 
   return (
@@ -62,9 +62,8 @@ const Carousel = ({ list, title }) => {
       </div>
       <div className={styles.Carousel} ref={carousel}>
         {data?.map((item) => (
-          <Link to={`/${categoria}/${item.id}`}>
+          <Link key={item.id} to={`/${categoria}/${item.id}`}>
             <img
-              key={item.id}
               src={`https://image.tmdb.org/t/p/original/${item.poster_path}`}
               alt={item.title}
             />
