@@ -1,38 +1,42 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import styles from "./styles.module.scss";
 
 const Favoritos = () => {
   const [favoritos, setFavoritos] = useState([]);
+  const text = useRef(null);
 
   useEffect(() => {
     const listaFavoritos = localStorage.getItem("@favoritos");
 
     setFavoritos(JSON.parse(listaFavoritos) || []);
-
-    console.log(favoritos);
   }, []);
+
+  function excluirItem(id) {
+    let filtroFilmes = favoritos.filter((filme) => filme.id !== id);
+    setFavoritos(filtroFilmes);
+    localStorage.setItem("@favoritos", JSON.stringify(filtroFilmes));
+  }
 
   return (
     <div className={styles.Container}>
       <h1>Meus favoritos</h1>
 
-      <div className={styles.Lista}>
-        <div className={styles.Img}>
-          <img
-            src="https://image.tmdb.org/t/p/original//ruHPkmmAwBTCzNXtHot18rs6ctN.jpg"
-            alt=""
-          />
-        </div>
-        <div className={styles.Text}>
-          <h2>Titulo</h2>
-          <p>
-            Descrição do filme
-            icbshscbhsdbcihbisabicbiasdcbiasbiucbsiubcsipabscip
-          </p>
+      {favoritos.map((item) => (
+        <div key={item.id} className={styles.Lista}>
+          <div className={styles.Img}>
+            <img
+              src={`https://image.tmdb.org/t/p/original/${item.poster_path}`}
+              alt={item.title}
+            />
+          </div>
+          <div className={styles.Text}>
+            <h2>{item.title}</h2>
+            <p ref={text}>{item.overview}</p>
 
-          <button>Excluir</button>
+            <button onClick={() => excluirItem(item.id)}>Excluir</button>
+          </div>
         </div>
-      </div>
+      ))}
     </div>
   );
 };

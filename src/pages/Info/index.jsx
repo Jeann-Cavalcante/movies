@@ -1,17 +1,45 @@
+import { Plus } from "phosphor-react";
 import { CircularProgressbar } from "react-circular-progressbar";
 import { useParams } from "react-router-dom";
 
 import { useApiMovie } from "../../hooks/useApiMovie";
+import { useCategoryContext } from "../../hooks/useCategoryContext";
 import styles from "./styles.module.scss";
 
 import "react-circular-progressbar/dist/styles.css";
-import { useCategoryContext } from "../../hooks/useCategoryContext";
+import { useEffect, useState } from "react";
 
 const Info = () => {
   const { id } = useParams();
   const { categoria } = useCategoryContext();
   const url = `https://api.themoviedb.org/3/${categoria}/${id}`;
   const { info } = useApiMovie(url);
+  const [items, setItems] = useState([]);
+  const [salvo, setSalvo] = useState(false);
+
+  function handleFavorito(e) {
+    e.preventDefault();
+
+    const listaFavoritos = localStorage.getItem("@favoritos");
+
+    let itemSalvo = JSON.parse(listaFavoritos) || [];
+
+    if (info) {
+      const itemExiste = itemSalvo.some((item) => item.id === info.id);
+
+      if (itemExiste) {
+        setSalvo(true);
+        return alert("Esse item já foi salvo");
+      }
+
+      itemSalvo.push(info);
+      localStorage.setItem("@favoritos", JSON.stringify(itemSalvo));
+      console.log(items);
+      alert("Filme adicionado");
+    } else {
+      alert("Erro, tente outra vez");
+    }
+  }
 
   //If de testes
   if (info) {
@@ -50,6 +78,10 @@ const Info = () => {
                   },
                 }}
               />
+              <button onClick={handleFavorito}>
+                <Plus size={35} weight="bold" />
+                Adicionar aos favoritos
+              </button>
             </div>
           </div>
         </div>
