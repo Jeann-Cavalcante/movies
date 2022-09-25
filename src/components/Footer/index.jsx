@@ -1,15 +1,36 @@
-import { GithubLogo, LinkedinLogo } from "phosphor-react";
+import { GithubLogo, LinkedinLogo, WhatsappLogo } from "phosphor-react";
 import styles from "./styles.module.scss";
 
 const Footer = () => {
   return (
     <footer>
       <h5>
-        Feito por <span>Jeancavalcante</span> com muito ♥
+        Feito por{" "}
+        <a
+          className={styles.Nome}
+          target="_blank"
+          href="https://www.linkedin.com/in/jean-cavalcante-296245149/"
+        >
+          Jeancavalcante
+        </a>{" "}
+        com muito ♥
       </h5>
       <div className={styles.Icons}>
-        <LinkedinLogo size={30} />
-        <GithubLogo size={30} />
+        <a
+          target="_blank"
+          href="https://www.linkedin.com/in/jean-cavalcante-296245149/"
+        >
+          <LinkedinLogo size={50} />
+        </a>
+        <a target="_blank" href="https://github.com/Jeann-Cavalcante">
+          <GithubLogo size={50} />
+        </a>
+        <a
+          target="_blank"
+          href=" https://api.whatsapp.com/send?phone=5511995985952&amp;text=Olá!"
+        >
+          <WhatsappLogo size={52} />
+        </a>
       </div>
     </footer>
   );
