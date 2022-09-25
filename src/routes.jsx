@@ -6,6 +6,7 @@ import Favoritos from "./pages/Favoritos";
 import Info from "./pages/Info";
 import NotFound from "./pages/NotFound";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import Footer from "./components/Footer";
 
 function RoutesApp() {
   return (
@@ -20,6 +21,8 @@ function RoutesApp() {
 
         <Route path="*" element={<NotFound />} />
       </Routes>
+
+      <Footer />
     </Router>
   );
 }
