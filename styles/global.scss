@@ -26,7 +26,11 @@ body {
 
 .App {
   min-height: 100vh;
-  position: relative;
+  // position: relative;
+  padding-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 
 button {

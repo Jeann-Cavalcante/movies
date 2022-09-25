@@ -1,14 +1,10 @@
 .Container {
   position: relative;
-  margin-top: 5rem;
+  padding: 2rem 0;
   color: var(--gray);
 
-  &:first-child {
-    margin-top: 7rem;
-  }
-
   @media (max-width: 600px) {
-    margin-top: 2rem;
+    padding-top: 2rem;
   }
 
   h2 {
