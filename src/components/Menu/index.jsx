@@ -3,12 +3,12 @@ import { useCategoryContext } from "../../hooks/useCategoryContext";
 import styles from "./styles.module.scss";
 
 const Menu = () => {
-  const { categoria, setCategoria } = useCategoryContext();
+  const { setCategoria } = useCategoryContext();
 
   return (
     <header>
       <Link onClick={() => setCategoria("movie")} to="/">
-        <span>Movies</span>
+        <span>Cine Flix</span>
       </Link>
 
       <nav>
