@@ -1,4 +1,5 @@
-import { GithubLogo, LinkedinLogo, WhatsappLogo } from "phosphor-react";
+import { GithubLogo, LinkedinLogo, Smiley, WhatsappLogo } from "phosphor-react";
+
 import styles from "./styles.module.scss";
 
 const Footer = () => {
@@ -13,7 +14,6 @@ const Footer = () => {
         >
           Jeancavalcante
         </a>{" "}
-        com muito ♥
       </h5>
       <div className={styles.Icons}>
         <a
