@@ -32,7 +32,7 @@ const Carousel = ({ list, title }) => {
     } else {
       setArrowLeft(false);
     }
-    carousel.current.scrollLeft -= carousel.current.offsetWidth;
+    carousel.current.scrollLeft -= carousel.current.offsetWidth - 200;
     // console.log(positionScroll.left);
   }
 
@@ -44,7 +44,7 @@ const Carousel = ({ list, title }) => {
     } else {
       setArrowLeft(false);
     }
-    carousel.current.scrollLeft += carousel.current.offsetWidth;
+    carousel.current.scrollLeft += carousel.current.offsetWidth - 200;
     // console.log(positionScroll.left);
   }
 

@@ -1,11 +1,7 @@
 .Container {
   position: relative;
-  padding: 2rem 0;
+  padding: 1rem 0;
   color: var(--gray);
-
-  @media (max-width: 600px) {
-    padding-top: 2rem;
-  }
 
   h2 {
     margin: 0 0 1rem 1rem;
@@ -14,7 +10,7 @@
   }
   .ArrowLeft {
     position: absolute;
-    top: 120px;
+    top: 165px;
     cursor: pointer;
     opacity: 0.5;
     padding: 3rem 1rem;
@@ -26,14 +22,14 @@
     }
 
     @media (max-width: 600px) {
-      top: 125px;
+      top: 155px;
       padding: 1rem 0.5rem;
     }
   }
 
   .ArrowRight {
     position: absolute;
-    top: 120px;
+    top: 165px;
     right: 0;
     opacity: 0.5;
     cursor: pointer;
@@ -46,7 +42,7 @@
     }
 
     @media (max-width: 600px) {
-      top: 125px;
+      top: 155px;
       padding: 1rem 0.5rem;
     }
   }
