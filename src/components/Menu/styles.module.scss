@@ -29,6 +29,13 @@ header {
   nav {
     display: flex;
     gap: 1rem;
+
+    // @media (max-width: 600px) {
+    //   display: none;
+    // }
+    // nav.menuVisibility {
+    //   display: block;
+    // }
   }
 
   nav a {
@@ -38,5 +45,13 @@ header {
 
   nav a:hover {
     color: var(--green);
+  }
+
+  svg {
+    display: none;
+
+    // @media (max-width: 600px) {
+    //   display: block;
+    // }
   }
 }
