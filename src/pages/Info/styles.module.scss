@@ -1,9 +1,9 @@
 .Background {
-  margin-top: 4rem;
   width: 100%;
   height: 900px;
   object-fit: cover;
   -webkit-mask-image: linear-gradient(to top, transparent 10%, black 100%);
+  margin-top: -4rem;
 
   @media (max-width: 1080px) {
     height: auto;
