@@ -10,7 +10,7 @@
   }
   .ArrowLeft {
     position: absolute;
-    top: 165px;
+    top: 140px;
     cursor: pointer;
     opacity: 0.5;
     padding: 3rem 1rem;
@@ -22,14 +22,14 @@
     }
 
     @media (max-width: 600px) {
-      top: 155px;
+      top: 135px;
       padding: 1rem 0.5rem;
     }
   }
 
   .ArrowRight {
     position: absolute;
-    top: 165px;
+    top: 140px;
     right: 0;
     opacity: 0.5;
     cursor: pointer;
@@ -42,7 +42,7 @@
     }
 
     @media (max-width: 600px) {
-      top: 155px;
+      top: 135px;
       padding: 1rem 0.5rem;
     }
   }
