@@ -61,6 +61,7 @@ const Info = () => {
             <div className={styles.Title}>
               <h1>{info.title}</h1>
               <p>{info.overview}</p>
+
               <CircularProgressbar
                 className={styles.Circle}
                 value={info.vote_average}
