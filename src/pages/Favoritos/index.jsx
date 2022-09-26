@@ -22,7 +22,7 @@ const Favoritos = () => {
       <h1>Meus favoritos</h1>
 
       {favoritos.length === 0 && (
-        <p>
+        <p className={styles.P}>
           Adicione filmes ou series como favoritos para que possam aparecer aqui
         </p>
       )}
