@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import { toast } from "react-toastify";
 import styles from "./styles.module.scss";
 
 const Favoritos = () => {
@@ -15,6 +16,7 @@ const Favoritos = () => {
     let filtroFilmes = favoritos.filter((filme) => filme.id !== id);
     setFavoritos(filtroFilmes);
     localStorage.setItem("@favoritos", JSON.stringify(filtroFilmes));
+    toast.success("Excluído com sucesso");
   }
 
   return (

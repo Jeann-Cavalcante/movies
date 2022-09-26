@@ -8,6 +8,7 @@ import styles from "./styles.module.scss";
 
 import "react-circular-progressbar/dist/styles.css";
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 const Info = () => {
   const { id } = useParams();
@@ -29,15 +30,15 @@ const Info = () => {
 
       if (itemExiste) {
         setSalvo(true);
-        return alert("Esse item já foi salvo");
+        return toast.warn("Esse item já foi salvo");
       }
 
       itemSalvo.push(info);
       localStorage.setItem("@favoritos", JSON.stringify(itemSalvo));
       console.log(items);
-      alert("Filme adicionado");
+      toast.success("Filme adicionado");
     } else {
-      alert("Erro, tente outra vez");
+      toast.error("Erro, tente outra vez");
     }
   }
 
