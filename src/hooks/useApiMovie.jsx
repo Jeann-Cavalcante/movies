@@ -18,6 +18,7 @@ export const useApiMovie = (url) => {
         });
 
         setData(api.data.results);
+        setLoading(false);
       } catch (err) {
         console.log(err);
         setLoading(false);
@@ -39,6 +40,7 @@ export const useApiMovie = (url) => {
           },
         });
         setInfo(api.data);
+        setLoading(false);
         // console.log(api.data);
       } catch (err) {
         console.log(err);
