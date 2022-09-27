@@ -58,8 +58,8 @@ const Carousel = ({ list, title }) => {
         </div>
       )}
 
-      <div className={styles.ArrowRight}>
-        <ArrowRight onClick={handleRightClick} size={45} weight="bold" />
+      <div className={styles.ArrowRight} onClick={handleRightClick}>
+        <ArrowRight size={45} weight="bold" />
       </div>
       <div className={styles.Carousel} ref={carousel}>
         {data?.map((item) => (
