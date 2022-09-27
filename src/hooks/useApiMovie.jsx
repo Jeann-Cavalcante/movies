@@ -12,7 +12,7 @@ export const useApiMovie = (url) => {
         setLoading(true);
         const api = await axios.get(url, {
           params: {
-            api_key: "0a63895da26658ca9dd1ffeb20159d01",
+            api_key: import.meta.env.VITE_KEY,
             language: "pt-BR",
           },
         });
