@@ -14,7 +14,7 @@ const Info = () => {
   const { id } = useParams();
   const { categoria } = useCategoryContext();
   const url = `https://api.themoviedb.org/3/${categoria}/${id}`;
-  const { info } = useApiMovie(url);
+  const { info, loading } = useApiMovie(url);
   const [items, setItems] = useState([]);
   const [salvo, setSalvo] = useState(false);
 
