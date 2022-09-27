@@ -4,6 +4,7 @@ import styles from "./styles.module.scss";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useCategoryContext } from "../../hooks/useCategoryContext";
+import Loading from "../Loading";
 
 const Carousel = ({ list, title }) => {
   const [arrowLeft, setArrowLeft] = useState(false);
@@ -63,10 +64,14 @@ const Carousel = ({ list, title }) => {
       <div className={styles.Carousel} ref={carousel}>
         {data?.map((item) => (
           <Link key={item.id} to={`/${categoria}/${item.id}`}>
-            <img
-              src={`https://image.tmdb.org/t/p/original/${item.poster_path}`}
-              alt={item.title}
-            />
+            {loading ? (
+              <Loading />
+            ) : (
+              <img
+                src={`https://image.tmdb.org/t/p/original/${item.poster_path}`}
+                alt={item.title}
+              />
+            )}
           </Link>
         ))}
       </div>
