@@ -8,20 +8,20 @@ export const useApiMovie = (url) => {
 
   useEffect(() => {
     const GetMovie = async () => {
-      setLoading(true);
+      try {
+        setLoading(true);
+        const api = await axios.get(url, {
+          params: {
+            api_key: "0a63895da26658ca9dd1ffeb20159d01",
+            language: "pt-BR",
+          },
+        });
 
-      const api = await axios.get(url, {
-        params: {
-          api_key: "0a63895da26658ca9dd1ffeb20159d01",
-          language: "pt-BR",
-        },
-      });
-
-      setData(api.data.results);
-
-      setLoading(true);
-      // console.log(api.data.results);
-      // console.log(url);
+        setData(api.data.results);
+      } catch (err) {
+        console.log(err);
+        setLoading(false);
+      }
     };
 
     GetMovie();
@@ -29,16 +29,21 @@ export const useApiMovie = (url) => {
 
   useEffect(() => {
     const GetInfo = async () => {
-      setLoading(true);
+      try {
+        setLoading(true);
 
-      const api = await axios.get(url, {
-        params: {
-          api_key: "0a63895da26658ca9dd1ffeb20159d01",
-          language: "pt-BR",
-        },
-      });
-      setInfo(api.data);
-      // console.log(api.data);
+        const api = await axios.get(url, {
+          params: {
+            api_key: "0a63895da26658ca9dd1ffeb20159d01",
+            language: "pt-BR",
+          },
+        });
+        setInfo(api.data);
+        // console.log(api.data);
+      } catch (err) {
+        console.log(err);
+        setLoading(false);
+      }
     };
     GetInfo();
   }, []);
