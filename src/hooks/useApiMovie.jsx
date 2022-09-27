@@ -8,8 +8,8 @@ export const useApiMovie = (url) => {
 
   useEffect(() => {
     const GetMovie = async () => {
+      setLoading(true);
       try {
-        setLoading(true);
         const api = await axios.get(url, {
           params: {
             api_key: import.meta.env.VITE_KEY,
@@ -31,8 +31,6 @@ export const useApiMovie = (url) => {
   useEffect(() => {
     const GetInfo = async () => {
       try {
-        setLoading(true);
-
         const api = await axios.get(url, {
           params: {
             api_key: "0a63895da26658ca9dd1ffeb20159d01",
@@ -40,11 +38,9 @@ export const useApiMovie = (url) => {
           },
         });
         setInfo(api.data);
-        setLoading(false);
         // console.log(api.data);
       } catch (err) {
         console.log(err);
-        setLoading(false);
       }
     };
     GetInfo();
