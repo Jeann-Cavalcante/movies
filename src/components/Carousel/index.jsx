@@ -1,10 +1,11 @@
 import { ArrowLeft, ArrowRight } from "phosphor-react";
-import { useApiMovie } from "../../hooks/useApiMovie";
-import styles from "./styles.module.scss";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+
+import { useApiMovie } from "../../hooks/useApiMovie";
 import { useCategoryContext } from "../../hooks/useCategoryContext";
 import Loading from "../Loading";
+import styles from "./styles.module.scss";
 
 const Carousel = ({ list, title }) => {
   const [arrowLeft, setArrowLeft] = useState(false);
@@ -53,8 +54,8 @@ const Carousel = ({ list, title }) => {
     <div className={styles.Container}>
       <h2>{title}</h2>
       {arrowLeft && (
-        <div className={styles.ArrowLeft}>
-          <ArrowLeft size={45} onClick={handleLeftClick} weight="bold" />
+        <div className={styles.ArrowLeft} onClick={handleLeftClick}>
+          <ArrowLeft size={45} weight="bold" />
         </div>
       )}
 

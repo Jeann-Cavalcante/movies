@@ -30,12 +30,9 @@ header {
     display: flex;
     gap: 1rem;
 
-    // @media (max-width: 600px) {
-    //   display: none;
-    // }
-    // nav.menuVisibility {
-    //   display: block;
-    // }
+    @media (max-width: 600px) {
+      display: none;
+    }
   }
 
   nav a {
@@ -50,8 +47,8 @@ header {
   svg {
     display: none;
 
-    // @media (max-width: 600px) {
-    //   display: block;
-    // }
+    @media (max-width: 600px) {
+      display: block;
+    }
   }
 }
