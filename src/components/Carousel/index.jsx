@@ -7,25 +7,17 @@ import { useCategoryContext } from "../../hooks/useCategoryContext";
 import Loading from "../Loading";
 import styles from "./styles.module.scss";
 
-const Carousel = ({ list, title }) => {
+const Carousel = ({ list, title, id }) => {
   const [arrowLeft, setArrowLeft] = useState(false);
 
   const { categoria } = useCategoryContext();
 
-  const url = `https://api.themoviedb.org/3/${categoria}/${list}`;
+  const url = `https://api.themoviedb.org/3/${categoria}/${
+    id ? id + "/similar" : list
+  }`;
   const { data, loading } = useApiMovie(url);
 
   const carousel = useRef(null);
-
-  useEffect(() => {
-    // function GetCategory() {
-    //   setCategoria(category);
-    // }
-    // GetCategory();
-    // console.log(categoria);
-    // const positionScroll = carousel.current.children[0].getBoundingClientRect();
-    // console.log(positionScroll);
-  }, []);
 
   function handleLeftClick() {
     const positionScroll = carousel.current.children[0].getBoundingClientRect();

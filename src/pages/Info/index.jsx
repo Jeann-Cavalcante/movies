@@ -9,6 +9,7 @@ import styles from "./styles.module.scss";
 import "react-circular-progressbar/dist/styles.css";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import Carousel from "../../components/Carousel";
 
 const Info = () => {
   const { id } = useParams();
@@ -86,6 +87,10 @@ const Info = () => {
               </button>
             </div>
           </div>
+        </div>
+
+        <div className={styles.Carousel}>
+          <Carousel title="Similares" id={id} />
         </div>
       </div>
     );
