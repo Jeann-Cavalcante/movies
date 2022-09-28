@@ -29,6 +29,7 @@ header {
   nav {
     display: flex;
     gap: 1rem;
+    transition: linear 0.5s;
 
     @media (max-width: 600px) {
       display: none;
@@ -43,12 +44,28 @@ header {
   nav a:hover {
     color: var(--green);
   }
+}
 
-  svg {
-    display: none;
+nav.isMenu {
+  flex-direction: column;
+  background-color: var(--bg-secondary);
+  position: absolute;
+  top: 3rem;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0;
 
-    @media (max-width: 600px) {
-      display: block;
-    }
+  a {
+    font-size: 1.5rem;
+  }
+}
+
+.Svg {
+  display: none;
+
+  @media (max-width: 600px) {
+    display: block;
   }
 }

@@ -1,5 +1,5 @@
-import { List } from "phosphor-react";
-import { useState } from "react";
+import { List, X } from "phosphor-react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { useCategoryContext } from "../../hooks/useCategoryContext";
@@ -7,17 +7,28 @@ import styles from "./styles.module.scss";
 
 const Menu = () => {
   const { setCategoria } = useCategoryContext();
-  const [menuVisibility, setMenuVisibility] = useState("");
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [size, setSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
 
-  function handleMenu() {
-    if (menuVisibility === "") {
-      setMenuVisibility("menuVisibility");
-      console.log(menuVisibility);
-    } else {
-      setMenuVisibility("");
-      console.log(menuVisibility);
-    }
-  }
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setSize({
+  //       width: window.innerWidth,
+  //       height: window.innerHeight,
+  //     });
+  //   };
+  //   window.addEventListener("resize", handleResize);
+  //   console.log(size);
+
+  //   return () => window.removeEventListener("resize", handleResize);
+  // }, []);
+
+  const menuToggleHandler = () => {
+    setMenuOpen((p) => !p);
+  };
 
   return (
     <header>
@@ -25,16 +36,28 @@ const Menu = () => {
         <span>CineFlix</span>
       </Link>
 
-      <nav className={`${menuVisibility}`}>
-        <Link onClick={() => setCategoria("movie")} to="/">
+      <nav className={`menu ${menuOpen ? styles.isMenu : ""}`}>
+        <Link onClick={() => setCategoria("movie") & setMenuOpen(false)} to="/">
           Filmes
         </Link>
-        <Link onClick={() => setCategoria("tv")} to="/serie">
+        <Link
+          onClick={() => setCategoria("tv") & setMenuOpen(false)}
+          to="/serie"
+        >
           Series
         </Link>
-        <Link to="/favoritos">Favoritos</Link>
+        <Link to="/favoritos" onClick={() => setMenuOpen(false)}>
+          Favoritos
+        </Link>
       </nav>
-      <List size={40} onClick={handleMenu} />
+
+      <div className={styles.Svg}>
+        {!menuOpen ? (
+          <List size={40} onClick={menuToggleHandler} />
+        ) : (
+          <X size={40} onClick={menuToggleHandler} />
+        )}
+      </div>
     </header>
   );
 };
