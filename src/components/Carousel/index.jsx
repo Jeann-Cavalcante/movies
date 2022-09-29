@@ -64,9 +64,7 @@ const Carousel = ({ list, title }) => {
                 src={`https://image.tmdb.org/t/p/original/${item.poster_path}`}
                 alt={item.title}
                 onClick={() => {
-                  setId(item.id),
-                    setCategoria(categoria),
-                    console.log(`${(categoria, id)} `);
+                  setId(item.id), setCategoria(categoria);
                 }}
               />
             )}

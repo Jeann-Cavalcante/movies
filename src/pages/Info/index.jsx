@@ -23,10 +23,6 @@ const Info = () => {
     url = `https://api.themoviedb.org/3/${categoria}/${id}`;
   }, [id]);
 
-  function handleCarousel() {
-    console.log(salvo);
-  }
-
   function handleFavorito(e) {
     e.preventDefault();
 
@@ -98,7 +94,7 @@ const Info = () => {
         </div>
 
         <div className={styles.Carousel}>
-          <Carousel title="Similares" onClick={handleCarousel} />
+          <Carousel title="Similares" />
         </div>
       </div>
     );
