@@ -11,13 +11,15 @@
 
   img {
     width: 100%;
+    z-index: -2;
   }
 }
 
 .Content {
-  margin-top: -300px;
+  margin-top: -200px;
   display: flex;
   justify-content: center;
+  z-index: 2;
 
   @media (max-width: 1080px) {
     flex-direction: column;
@@ -80,7 +82,7 @@
     gap: 0.5rem;
     margin-top: 2rem;
     transition: all 0.3s;
-    z-index: 1;
+    z-index: 11515;
 
     &:hover {
       opacity: 0.8;
