@@ -8,7 +8,7 @@ export const useApiMovie = (url) => {
   const [info, setInfo] = useState(null);
 
   const { categoria } = useCategoryContext();
-  console.log(url);
+  // console.log(url);
 
   //api.themoviedb.org/3/genre/movie/list?api_key=0a63895da26658ca9dd1ffeb20159d01&language=pt-br
 
