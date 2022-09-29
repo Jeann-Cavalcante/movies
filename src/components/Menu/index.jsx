@@ -6,7 +6,7 @@ import { useCategoryContext } from "../../hooks/useCategoryContext";
 import styles from "./styles.module.scss";
 
 const Menu = () => {
-  const { setCategoria } = useCategoryContext();
+  const { setCategoria, setId } = useCategoryContext();
   const [menuOpen, setMenuOpen] = useState(false);
   const [size, setSize] = useState({
     width: undefined,
@@ -32,21 +32,31 @@ const Menu = () => {
 
   return (
     <header>
-      <Link onClick={() => setCategoria("movie")} to="/">
+      <Link
+        onClick={() => {
+          setCategoria("movie"), setId(null);
+        }}
+        to="/"
+      >
         <span>CineFlix</span>
       </Link>
 
       <nav className={`menu ${menuOpen ? styles.isMenu : ""}`}>
-        <Link onClick={() => setCategoria("movie") & setMenuOpen(false)} to="/">
+        <Link
+          onClick={() =>
+            setCategoria("movie") & setMenuOpen(false) & setId(null)
+          }
+          to="/"
+        >
           Filmes
         </Link>
         <Link
-          onClick={() => setCategoria("tv") & setMenuOpen(false)}
+          onClick={() => setCategoria("tv") & setMenuOpen(false) & setId(null)}
           to="/serie"
         >
           Series
         </Link>
-        <Link to="/favoritos" onClick={() => setMenuOpen(false)}>
+        <Link to="/favoritos" onClick={() => setMenuOpen(false) & setId(null)}>
           Favoritos
         </Link>
       </nav>

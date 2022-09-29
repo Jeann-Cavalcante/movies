@@ -7,10 +7,10 @@ import { useCategoryContext } from "../../hooks/useCategoryContext";
 import Loading from "../Loading";
 import styles from "./styles.module.scss";
 
-const Carousel = ({ list, title, id }) => {
+const Carousel = ({ list, title }) => {
   const [arrowLeft, setArrowLeft] = useState(false);
 
-  const { categoria } = useCategoryContext();
+  const { categoria, setCategoria, id, setId } = useCategoryContext();
 
   const url = `https://api.themoviedb.org/3/${categoria}/${
     id ? id + "/similar" : list
@@ -63,6 +63,11 @@ const Carousel = ({ list, title, id }) => {
               <img
                 src={`https://image.tmdb.org/t/p/original/${item.poster_path}`}
                 alt={item.title}
+                onClick={() => {
+                  setId(item.id),
+                    setCategoria(categoria),
+                    console.log(`${(categoria, id)} `);
+                }}
               />
             )}
           </Link>

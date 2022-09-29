@@ -13,11 +13,19 @@ import Carousel from "../../components/Carousel";
 
 const Info = () => {
   const { id } = useParams();
-  const { categoria } = useCategoryContext();
-  const url = `https://api.themoviedb.org/3/${categoria}/${id}`;
-  const { info, loading } = useApiMovie(url);
-  const [items, setItems] = useState([]);
+  const { categoria, setId } = useCategoryContext();
+
+  let url = `https://api.themoviedb.org/3/${categoria}/${id}`;
+  const { info } = useApiMovie(url);
   const [salvo, setSalvo] = useState(false);
+
+  useEffect(() => {
+    url = `https://api.themoviedb.org/3/${categoria}/${id}`;
+  }, [id]);
+
+  function handleCarousel() {
+    console.log(salvo);
+  }
 
   function handleFavorito(e) {
     e.preventDefault();
@@ -36,7 +44,7 @@ const Info = () => {
 
       itemSalvo.push(info);
       localStorage.setItem("@favoritos", JSON.stringify(itemSalvo));
-      console.log(items);
+
       toast.success("Filme adicionado");
     } else {
       toast.error("Erro, tente outra vez");
@@ -90,7 +98,7 @@ const Info = () => {
         </div>
 
         <div className={styles.Carousel}>
-          <Carousel title="Similares" id={id} />
+          <Carousel title="Similares" onClick={handleCarousel} />
         </div>
       </div>
     );

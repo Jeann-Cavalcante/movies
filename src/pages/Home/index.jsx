@@ -1,7 +1,13 @@
 import Carousel from "../../components/Carousel";
 import { useApiMovie } from "../../hooks/useApiMovie";
+import { useCategoryContext } from "../../hooks/useCategoryContext";
 
 const Home = () => {
+  const { setId, setCategoria } = useCategoryContext();
+
+  setId(null);
+  setCategoria("movie");
+
   return (
     <div>
       <Carousel title="Populares" category="movie" list="popular" />
